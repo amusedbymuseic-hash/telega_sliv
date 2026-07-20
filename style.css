@@ -96,7 +96,7 @@ button { font: inherit; }
   width: 50%;
   transform: translateX(-50%);
 }
-.choice-group--chat { top: 48%; }
+.choice-group--chat { top: 48.7%; }
 .choice-group--story {
   top: 75%;
   width: 46%;
@@ -115,9 +115,9 @@ button { font: inherit; }
   opacity: 1 !important;
 }
 .choice {
-  min-height: 42px;
-  padding: 9px 8px;
-  font-size: clamp(16px, 4.2vw, 21px);
+  min-height: 34px;
+  padding: 6px 8px;
+  font-size: clamp(14px, 3.8vw, 18px);
 }
 .choice.is-correct { background: linear-gradient(180deg, #3b9c75, #176148); }
 .choice.is-wrong { background: linear-gradient(180deg, #b94a5e, #782538); }
