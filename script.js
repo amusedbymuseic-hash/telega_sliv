@@ -80,6 +80,7 @@
   const chatSlide = document.getElementById('chatSlide');
   const storySlide = document.getElementById('storySlide');
   const finishText = document.getElementById('finishText');
+  const nextClueButton = document.getElementById('nextClueButton');
 
   let score = 0;
   let roundIndex = 0;
@@ -107,6 +108,7 @@
     storySlide.style.setProperty('--bg', `url('${round.storyImage}')`);
 
     selectedFriend.innerHTML = '';
+    nextClueButton.hidden = true;
 
     friendChoices.innerHTML = '';
     round.options.forEach(option => {
@@ -166,43 +168,51 @@
   function finishStory(button) {
     if (storyAnswered) return;
     storyAnswered = true;
-
+  
     if (button.dataset.story === 'yes') {
       score += 1;
       button.classList.add('is-correct');
     } else {
       button.classList.add('is-wrong');
     }
-
+  
     renderScore();
+  
     document.querySelectorAll('[data-story]').forEach(item => item.disabled = true);
-
-    setTimeout(() => {
-      if (roundIndex < rounds.length - 1) {
-        roundIndex += 1;
-        renderRound();
-        showSlide('chat');
-      } else {
-        let resultText = '';
-    
-        if (score <= 6) {
-          resultText =
-            'Ты так много переписываешься с подружками, что уже не помнишь, где какая. Жди скрины в паблике «Подслушано Митино»!';
-        } else if (score <= 10) {
-          resultText =
-            'А ты хорошо помнишь свои переписки! Так уж и быть, ваши секреты останутся между вами.';
-        } else {
-          resultText =
-            'От тебя ничего не скроешь! Снимаю шляпу и удаляю слитые архивы!';
-        }
-    
-        finishText.textContent =
-          `Ты набрала ${score} из ${rounds.length * 2} баллов. ${resultText}`;
-    
-        showSlide('finish');
-      }
-    }, 650);
+  
+    nextClueButton.textContent =
+      roundIndex < rounds.length - 1
+        ? 'Следующая улика'
+        : 'Завершить расследование';
+  
+    nextClueButton.hidden = false;
   }
+
+  nextClueButton.addEventListener('click', () => {
+    if (roundIndex < rounds.length - 1) {
+      roundIndex++;
+      renderRound();
+      showSlide('chat');
+    } else {
+      let resultText = '';
+  
+      if (score <= 6) {
+        resultText =
+          'Ты так много переписываешься с подружками, что уже не помнишь, где какая. Жди скрины в паблике «Подслушано Митино»!';
+      } else if (score <= 10) {
+        resultText =
+          'А ты хорошо помнишь свои переписки! Так уж и быть, ваши секреты останутся между вами.';
+      } else {
+        resultText =
+          'От тебя ничего не скроешь! Снимаю шляпу и удаляю слитые архивы!';
+      }
+  
+      finishText.textContent =
+        `Ты набрала ${score} из ${rounds.length * 2} баллов. ${resultText}`;
+  
+      showSlide('finish');
+    }
+  });
 
   document.querySelector('[data-next="rules"]').addEventListener('click', () => showSlide('rules'));
 
