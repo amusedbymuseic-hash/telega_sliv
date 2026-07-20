@@ -19,6 +19,16 @@
         { id: 'dasha', label: 'Даша' }
       ],
       correct: 'dasha'
+    },
+    {
+      caseNumber: 3,
+      chatImage: 'assets/chat-mashap.jpg',
+      storyImage: 'assets/story-mashap.jpg',
+      options: [
+        { id: 'masha', label: 'Маша' },
+        { id: 'anya', label: 'Аня' }
+      ],
+      correct: 'masha'
     }
   ];
 
