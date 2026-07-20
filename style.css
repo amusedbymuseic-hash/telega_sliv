@@ -127,6 +127,26 @@ button { font: inherit; }
 .choice.is-correct { background: linear-gradient(180deg, #3b9c75, #176148); }
 .choice.is-wrong { background: linear-gradient(180deg, #b94a5e, #782538); }
 
+.action--next-clue {
+  position: absolute;
+  left: 50%;
+  bottom: max(4.2%, env(safe-area-inset-bottom));
+  z-index: 3;
+  width: 76%;
+  min-height: 52px;
+  transform: translateX(-50%);
+  padding: 13px 18px;
+  font-size: clamp(17px, 4.6vw, 23px);
+}
+
+.action--next-clue:active {
+  transform: translateX(-50%) translateY(2px) scale(.99);
+}
+
+.action--next-clue[hidden] {
+  display: none;
+}
+
 .slide--finish::after {
   content: "";
   position: absolute;
