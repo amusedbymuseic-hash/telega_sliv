@@ -29,6 +29,46 @@
         { id: 'anya', label: 'Аня' }
       ],
       correct: 'masha'
+    },
+    {
+      caseNumber: 4,
+      chatImage: 'assets/chat-anya.jpg',
+      storyImage: 'assets/story-anya.jpg',
+      options: [
+        { id: 'nastya', label: 'Настя' },
+        { id: 'anya', label: 'Аня' }
+      ],
+      correct: 'anya'
+    },
+    {
+      caseNumber: 5,
+      chatImage: 'assets/chat-marina.jpg',
+      storyImage: 'assets/story-marina.jpg',
+      options: [
+        { id: 'alisa', label: 'Алиса' },
+        { id: 'marina', label: 'Марина' }
+      ],
+      correct: 'marina'
+    },
+    // {
+    //   caseNumber: 6,
+    //   chatImage: 'assets/chat-alisa.jpg',
+    //   storyImage: 'assets/story-alisa.jpg',
+    //   options: [
+    //     { id: 'alisa', label: 'Алиса' },
+    //     { id: 'dasha', label: 'Даша' }
+    //   ],
+    //   correct: 'alisa'
+    // },
+    {
+      caseNumber: 6,
+      chatImage: 'assets/chat-nastya.jpg',
+      storyImage: 'assets/story-natya.jpg',
+      options: [
+        { id: 'nastya', label: 'Настя' },
+        { id: 'masha', label: 'Маша' }
+      ],
+      correct: 'nastya'
     }
   ];
 
