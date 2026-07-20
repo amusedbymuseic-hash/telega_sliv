@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#210f19" />
+  <title>Шок! Кто-то слил все переписки!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="app" aria-live="polite">
+    <section class="slide is-active" data-slide="intro" style="--bg:url('assets/intro.jpg')">
+      <button class="action action--bottom" data-next="rules">Начать расследование</button>
+    </section>
+
+    <section class="slide" data-slide="rules" style="--bg:url('assets/rules.jpg')">
+      <button class="action action--bottom" id="startGameButton">Перейти к уликам</button>
+    </section>
+
+    <section class="slide" data-slide="chat" id="chatSlide" style="--bg:url('assets/chat-masha.jpg')">
+      <div class="case-number">Дело №<span data-case>1</span></div>
+      <div class="score">Баллов: <span data-score>0</span></div>
+      <div class="choice-group choice-group--chat" id="friendChoices" aria-label="Выберите подружку"></div>
+    </section>
+
+    <section class="slide" data-slide="story" id="storySlide" style="--bg:url('assets/story-masha.jpg')">
+      <div class="case-number">Дело №<span data-case>1</span></div>
+      <div class="score">Баллов: <span data-score>0</span></div>
+
+      <div class="selected-answer" aria-label="Выбранная подружка">
+        <button class="choice selected-answer__button" id="selectedFriend" disabled></button>
+      </div>
+
+      <div class="choice-group choice-group--story" aria-label="Готова рассказать историю?">
+        <button class="choice" data-story="yes">Да</button>
+        <button class="choice" data-story="no">Нет</button>
+      </div>
+    </section>
+
+    <section class="slide slide--finish" data-slide="finish" style="--bg:url('assets/story-dasha.jpg')">
+      <div class="finish-card">
+        <p class="finish-kicker">Расследование завершено</p>
+        <h1>Баллов: <span data-score>0</span></h1>
+        <p id="finishText">Все дела изучены.</p>
+        <button class="action" id="restartButton">Начать заново</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
