@@ -96,7 +96,7 @@ button { font: inherit; }
   width: 35%;
   transform: translateX(-50%);
 }
-.choice-group--chat { top: 49%; }
+.choice-group--chat { top: 57%; }
 .choice-group--story {
   top: 75%;
   width: 46%;
