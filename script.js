@@ -127,29 +127,38 @@
   function chooseFriend(button, option) {
     if (friendAnswered) return;
     friendAnswered = true;
-
+  
     const round = rounds[roundIndex];
     const isCorrect = option.id === round.correct;
     const resultClass = isCorrect ? 'is-correct' : 'is-wrong';
-
+  
     if (isCorrect) score += 1;
     button.classList.add(resultClass);
-
+  
     renderScore();
-
+  
     friendChoices.querySelectorAll('button').forEach(item => {
       item.disabled = true;
-    
-      if (item !== button) {
-        item.style.display = 'none';
-      }
     });
-    
+  
     setTimeout(() => {
       selectedFriend.innerHTML = '';
-      selectedFriend.appendChild(button);
-      button.classList.add('choice--single');
-    
+  
+      round.options.forEach(item => {
+        const storyButton = document.createElement('button');
+        storyButton.className = 'choice';
+        storyButton.textContent = item.label;
+        storyButton.disabled = true;
+  
+        if (item.id === option.id) {
+          storyButton.classList.add(resultClass);
+        } else {
+          storyButton.classList.add('choice--hidden');
+        }
+  
+        selectedFriend.appendChild(storyButton);
+      });
+  
       showSlide('story');
     }, 650);
   }
