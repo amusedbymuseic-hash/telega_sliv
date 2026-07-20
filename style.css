@@ -102,18 +102,6 @@ button { font: inherit; }
   width: 46%;
 }
 
-.selected-answer {
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  z-index: 2;
-  width: 24%;
-  transform: translateX(-50%);
-}
-.selected-answer__button {
-  width: 100%;
-  opacity: 1 !important;
-}
 .choice {
   min-height: 34px;
   padding: 6px 8px;
