@@ -63,7 +63,7 @@
     {
       caseNumber: 6,
       chatImage: 'assets/chat-nastya.jpg',
-      storyImage: 'assets/story-natya.jpg',
+      storyImage: 'assets/story-nastya.jpg',
       options: [
         { id: 'nastya', label: 'Настя' },
         { id: 'masha', label: 'Маша' }
