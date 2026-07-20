@@ -98,7 +98,7 @@ button { font: inherit; }
 }
 .choice-group--chat { top: 49.8%; }
 .choice-group--story {
-  top: 69.5%;
+  top: 75%;
   width: 46%;
 }
 
