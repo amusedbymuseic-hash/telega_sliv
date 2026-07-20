@@ -96,23 +96,18 @@ button { font: inherit; }
   width: 35%;
   transform: translateX(-50%);
 }
-.choice-group--chat { top: 55%; }
-.choice-group--story {
-  top: 75%;
-  width: 46%;
+.choice-group--chat {
+  top: 55%;
 }
-
-.choice {
-  min-height: 34px;
-  padding: 6px 8px;
-  font-size: clamp(14px, 3.8vw, 18px);
-}
-.choice.is-correct { background: linear-gradient(180deg, #3b9c75, #176148); }
-.choice.is-wrong { background: linear-gradient(180deg, #b94a5e, #782538); }
 
 .choice-group--selected {
-  top: 55%;
+  top: 68%;
   width: 35%;
+}
+
+.choice-group--story {
+  top: 76%;
+  width: 46%;
 }
 
 .choice-group--selected .choice {
@@ -123,6 +118,14 @@ button { font: inherit; }
 .choice--hidden {
   visibility: hidden;
 }
+
+.choice {
+  min-height: 34px;
+  padding: 6px 8px;
+  font-size: clamp(14px, 3.8vw, 18px);
+}
+.choice.is-correct { background: linear-gradient(180deg, #3b9c75, #176148); }
+.choice.is-wrong { background: linear-gradient(180deg, #b94a5e, #782538); }
 
 .slide--finish::after {
   content: "";
