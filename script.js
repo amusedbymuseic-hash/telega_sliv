@@ -106,8 +106,7 @@
     chatSlide.style.setProperty('--bg', `url('${round.chatImage}')`);
     storySlide.style.setProperty('--bg', `url('${round.storyImage}')`);
 
-    selectedFriend.textContent = '';
-    selectedFriend.classList.remove('is-correct', 'is-wrong');
+    selectedFriend.innerHTML = '';
 
     friendChoices.innerHTML = '';
     round.options.forEach(option => {
@@ -136,13 +135,23 @@
     if (isCorrect) score += 1;
     button.classList.add(resultClass);
 
-    selectedFriend.textContent = option.label;
-    selectedFriend.classList.remove('is-correct', 'is-wrong');
-    selectedFriend.classList.add(resultClass);
-
     renderScore();
-    friendChoices.querySelectorAll('button').forEach(item => item.disabled = true);
-    setTimeout(() => showSlide('story'), 650);
+
+    friendChoices.querySelectorAll('button').forEach(item => {
+      item.disabled = true;
+    
+      if (item !== button) {
+        item.style.display = 'none';
+      }
+    });
+    
+    setTimeout(() => {
+      selectedFriend.innerHTML = '';
+      selectedFriend.appendChild(button);
+      button.classList.add('choice--single');
+    
+      showSlide('story');
+    }, 650);
   }
 
   function finishStory(button) {
