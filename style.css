@@ -93,7 +93,7 @@ button { font: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  width: 45%;
+  width: 35%;
   transform: translateX(-50%);
 }
 .choice-group--chat { top: 48.5%; }
