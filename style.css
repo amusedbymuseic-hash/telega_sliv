@@ -92,11 +92,11 @@ button { font: inherit; }
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  width: 50%;
+  gap: 8px;
+  width: 45%;
   transform: translateX(-50%);
 }
-.choice-group--chat { top: 48.7%; }
+.choice-group--chat { top: 48.5%; }
 .choice-group--story {
   top: 75%;
   width: 46%;
