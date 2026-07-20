@@ -183,7 +183,22 @@
         renderRound();
         showSlide('chat');
       } else {
-        finishText.textContent = `Ты раскрыла ${score} из ${rounds.length * 2} возможных баллов.`;
+        let resultText = '';
+    
+        if (score <= 6) {
+          resultText =
+            'Ты так много переписываешься с подружками, что уже не помнишь, где какая. Жди скрины в паблике «Подслушано Митино»!';
+        } else if (score <= 10) {
+          resultText =
+            'А ты хорошо помнишь свои переписки! Так уж и быть, ваши секреты останутся между вами.';
+        } else {
+          resultText =
+            'От тебя ничего не скроешь! Снимаю шляпу и удаляю слитые архивы!';
+        }
+    
+        finishText.textContent =
+          `Ты набрала ${score} из ${rounds.length * 2} баллов. ${resultText}`;
+    
         showSlide('finish');
       }
     }, 650);
